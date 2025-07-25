@@ -5,11 +5,11 @@ function Container({children})
 {
     return (
         <div className='mt-6 grid-rows-2 grid gap-x-9 gap-y-6 grid-cols-3 w-full min-h-80'>
-            <Card name="Alice Johnson" address="New York" /> 
-            <Card name="Alice Johnson" address="New York" /> 
-            <Card name="Alice Johnson" address="New York" /> 
-            <Card name="Alice Johnson" address="New York" /> 
-            <Card name="Alice Johnson" address="New York" /> 
+            {children.map(
+                (data) => {
+                    return <Card name = {data.name} address = {data.address} key={data.id} /> 
+                }
+            )}
         </div>
     )
 }
